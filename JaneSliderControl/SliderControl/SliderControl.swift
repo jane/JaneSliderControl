@@ -13,6 +13,7 @@ import UIKit
     private let slider:UIView = UIView()
     private let sliderLabel:UILabel = UILabel()
     private var sliderWidthConstraint:NSLayoutConstraint!
+    private var sliderImageWidthConstraint:NSLayoutConstraint!
     private var shouldSlide: Bool = false
     private let imageView:UIImageView = UIImageView()
     
@@ -20,6 +21,12 @@ import UIKit
     @IBInspectable public var sliderColor:UIColor = UIColor.lightGrayColor() {
         didSet {
             self.slider.backgroundColor = self.sliderColor
+            self.setNeedsLayout()
+        }
+    }
+    @IBInspectable public var textColor:UIColor = UIColor.blackColor() {
+        didSet {
+            self.sliderLabel.textColor = self.textColor
             self.setNeedsLayout()
         }
     }
@@ -39,12 +46,19 @@ import UIKit
     @IBInspectable public var sliderWidth:Float = 50.0 {
         didSet {
             self.sliderWidthConstraint.constant = CGFloat(self.sliderWidth)
+            self.sliderImageWidthConstraint.constant = CGFloat(self.sliderWidth)
             self.setNeedsLayout()
         }
     }
     @IBInspectable public var sliderImage:UIImage? = nil {
         didSet {
             self.imageView.image = self.sliderImage
+            self.setNeedsLayout()
+        }
+    }
+    @IBInspectable public var sliderImageContentMode:UIViewContentMode = .ScaleAspectFit {
+        didSet {
+            self.imageView.contentMode = self.sliderImageContentMode
             self.setNeedsLayout()
         }
     }
@@ -61,7 +75,7 @@ import UIKit
     }
     
     //MARK: - Private Methods
-    private func addVisualConstraints(vertical:String, horizontal:String, view:UIView, toView:UIView = self) {
+    private func addVisualConstraints(vertical:String, horizontal:String, view:UIView, toView:UIView) {
         let veritcalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(vertical, options: [], metrics: nil, views: ["view":view])
         let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(horizontal, options: [], metrics: nil, views: ["view":view])
         self.addConstraints(veritcalConstraints)
@@ -76,8 +90,9 @@ import UIKit
         //Add the slider label and set the constraints that will keep it centered
         self.sliderLabel.translatesAutoresizingMaskIntoConstraints = false
         self.sliderLabel.textAlignment = .Center
+        self.sliderLabel.textColor = self.textColor
         self.addSubview(self.sliderLabel)
-        self.addVisualConstraints("V:|[view]|", horizontal: "H:|[view]|", view: self.sliderLabel)
+        self.addVisualConstraints("V:|[view]|", horizontal: "H:|[view]|", view: self.sliderLabel, toView: self)
         
         //Create Slider
         self.slider.translatesAutoresizingMaskIntoConstraints = false
@@ -85,16 +100,18 @@ import UIKit
         self.slider.layer.cornerRadius = CGFloat(self.cornerRadius)
         self.slider.layer.masksToBounds = true
         self.addSubview(self.slider)
-        self.addVisualConstraints("V:|[view]|", horizontal: "H:|[view]", view: self.slider)
-        self.sliderWidthConstraint = NSLayoutConstraint(item: self.slider, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 50)
+        self.addVisualConstraints("V:|[view]|", horizontal: "H:|[view]", view: self.slider, toView: self)
+        self.sliderWidthConstraint = NSLayoutConstraint(item: self.slider, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGFloat(self.sliderWidth))
         self.slider.addConstraint(self.sliderWidthConstraint)
         
         //ImageView for optional slider image
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
         self.slider.addSubview(self.imageView)
-        self.imageView.contentMode = .Center
+        self.imageView.contentMode = self.sliderImageContentMode
         self.imageView.image = self.sliderImage
-        self.addVisualConstraints("V:|[view]|", horizontal: "H:|[view]|", view:self.imageView, toView: self.slider)
+        self.addVisualConstraints("V:|[view]|", horizontal: "H:[view]|", view:self.imageView, toView: self.slider)
+        self.sliderImageWidthConstraint = NSLayoutConstraint(item: self.imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGFloat(self.sliderWidth))
+        self.imageView.addConstraint(self.sliderImageWidthConstraint)
         
         //Add pan gesture to slide the slider view
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.panGesture(_:)))
@@ -104,13 +121,14 @@ import UIKit
     //MARK: - Public Methods
     func panGesture(recognizer:UIPanGestureRecognizer) {
         let x = recognizer.locationInView(self).x
+        let padding: CGFloat = 20.0
         
         switch (recognizer.state) {
             case .Began:
                 //Only slide if the gestures starts within the slide frame
-                 self.shouldSlide = x > (self.sliderWidthConstraint.constant - CGFloat(self.sliderWidth)) && x < self.sliderWidthConstraint.constant
+                 self.shouldSlide = x > (self.sliderWidthConstraint.constant - CGFloat(self.sliderWidth)) && x < self.sliderWidthConstraint.constant + padding
             case .Changed:
-                guard self.shouldSlide else { return }
+                guard self.shouldSlide && x > CGFloat(self.sliderWidth) else { return }
                 self.sliderWidthConstraint.constant = x
             case .Ended:fallthrough
             case .Cancelled:
