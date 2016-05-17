@@ -17,6 +17,7 @@ class ExampleViewController: UIViewController {
     
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
