@@ -18,10 +18,26 @@ class ExampleViewController: UIViewController {
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private func sliderName(slider:SliderControl) -> String {
+        switch (slider) {
+            case self.topSlider: return "Top Slider"
+            case self.leftSlider: return "Middle Left Slider"
+            case self.rightSlider: return "Middle Right Slider"
+            case self.thinSlider: return "Bottom Slider"
+            default: return "Unknown Slider"
+        }
     }
 
+    @IBAction func sliderChanged(sender: SliderControl) {
+        self.sliderLabel.text = self.sliderName(sender)
+        self.statusLabel.text = "Changing: Progress - \(sender.progress)"
+    }
+    @IBAction func sliderFinished(sender: SliderControl) {
+        self.sliderLabel.text = self.sliderName(sender)
+        self.statusLabel.text = "Finished"
+    }
+    @IBAction func slideCanceled(sender: SliderControl) {
+        self.sliderLabel.text = self.sliderName(sender)
+        self.statusLabel.text = "Canceled"
+    }
 }

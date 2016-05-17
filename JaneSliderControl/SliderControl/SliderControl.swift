@@ -168,9 +168,9 @@ import UIKit
                     self.layoutIfNeeded()
                 }, completion: { (finished) in
                     if success {
-                        self.sendActionsForControlEvents(.PrimaryActionTriggered)
-                    } else {
                         self.sendActionsForControlEvents(.EditingDidEnd)
+                    } else {
+                        self.sendActionsForControlEvents(.TouchCancel)
                     }
                 })
             default: break

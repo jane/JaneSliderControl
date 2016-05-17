@@ -36,6 +36,11 @@
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="slideCanceled:" destination="BYZ-38-t0r" eventType="touchCancel" id="LAG-Ld-khQ"/>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="meK-xo-1TZ"/>
+                                    <action selector="sliderFinished:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="tRK-8J-b3S"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvP-Em-EJX" customClass="SliderControl" customModule="SliderControl">
                                 <rect key="frame" x="20" y="219" width="273" height="65"/>
@@ -59,6 +64,11 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="sliderImage" value="chevron"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="slideCanceled:" destination="BYZ-38-t0r" eventType="touchCancel" id="WqF-TN-QaF"/>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="DeQ-RD-WHj"/>
+                                    <action selector="sliderFinished:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="tK5-u2-5Uo"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl3-Wz-5K5" customClass="SliderControl" customModule="SliderControl">
                                 <rect key="frame" x="307" y="219" width="273" height="65"/>
@@ -71,6 +81,11 @@
                                         <color key="value" red="0.0" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="slideCanceled:" destination="BYZ-38-t0r" eventType="touchCancel" id="jF0-bM-tIE"/>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="20X-EA-pp0"/>
+                                    <action selector="sliderFinished:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Vp5-oH-XSc"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wre-Ii-lt6" customClass="SliderControl" customModule="SliderControl">
                                 <rect key="frame" x="20" y="305" width="560" height="18"/>
@@ -89,6 +104,11 @@
                                         <real key="value" value="100"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="slideCanceled:" destination="BYZ-38-t0r" eventType="touchCancel" id="an3-b2-hDe"/>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zv4-oA-CW1"/>
+                                    <action selector="sliderFinished:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mYs-FG-4KN"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4t-oL-dCW">
                                 <rect key="frame" x="20" y="20" width="53.5" height="21"/>
