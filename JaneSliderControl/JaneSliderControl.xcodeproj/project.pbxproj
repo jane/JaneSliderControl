@@ -12,18 +12,16 @@
 		B338E0BC1CEB7F59002C1737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B338E0BA1CEB7F59002C1737 /* Main.storyboard */; };
 		B338E0BE1CEB7F59002C1737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B338E0BD1CEB7F59002C1737 /* Assets.xcassets */; };
 		B338E0C11CEB7F59002C1737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B338E0BF1CEB7F59002C1737 /* LaunchScreen.storyboard */; };
-		B338E0CC1CEB7F59002C1737 /* JaneSliderControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338E0CB1CEB7F59002C1737 /* JaneSliderControlTests.swift */; };
 		B338E0D71CEB7F59002C1737 /* JaneSliderControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338E0D61CEB7F59002C1737 /* JaneSliderControlUITests.swift */; };
+		B338E0EC1CEB8012002C1737 /* SliderControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B338E0EB1CEB8012002C1737 /* SliderControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B338E0F31CEB8012002C1737 /* SliderControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B338E0E91CEB8012002C1737 /* SliderControl.framework */; };
+		B338E0FA1CEB8012002C1737 /* SliderControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338E0F91CEB8012002C1737 /* SliderControlTests.swift */; };
+		B338E0FE1CEB8012002C1737 /* SliderControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B338E0E91CEB8012002C1737 /* SliderControl.framework */; };
+		B338E0FF1CEB8012002C1737 /* SliderControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B338E0E91CEB8012002C1737 /* SliderControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B338E1081CEB8077002C1737 /* SliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338E1071CEB8077002C1737 /* SliderControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B338E0C81CEB7F59002C1737 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B338E0AB1CEB7F59002C1737 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B338E0B21CEB7F59002C1737;
-			remoteInfo = JaneSliderControl;
-		};
 		B338E0D31CEB7F59002C1737 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B338E0AB1CEB7F59002C1737 /* Project object */;
@@ -31,7 +29,42 @@
 			remoteGlobalIDString = B338E0B21CEB7F59002C1737;
 			remoteInfo = JaneSliderControl;
 		};
+		B338E0F41CEB8012002C1737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B338E0AB1CEB7F59002C1737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B338E0E81CEB8012002C1737;
+			remoteInfo = SliderControl;
+		};
+		B338E0F61CEB8012002C1737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B338E0AB1CEB7F59002C1737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B338E0B21CEB7F59002C1737;
+			remoteInfo = JaneSliderControl;
+		};
+		B338E0FC1CEB8012002C1737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B338E0AB1CEB7F59002C1737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B338E0E81CEB8012002C1737;
+			remoteInfo = SliderControl;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B338E1031CEB8012002C1737 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B338E0FF1CEB8012002C1737 /* SliderControl.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B338E0B31CEB7F59002C1737 /* JaneSliderControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaneSliderControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,12 +74,16 @@
 		B338E0BD1CEB7F59002C1737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B338E0C01CEB7F59002C1737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B338E0C21CEB7F59002C1737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B338E0C71CEB7F59002C1737 /* JaneSliderControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaneSliderControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B338E0CB1CEB7F59002C1737 /* JaneSliderControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaneSliderControlTests.swift; sourceTree = "<group>"; };
-		B338E0CD1CEB7F59002C1737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B338E0D21CEB7F59002C1737 /* JaneSliderControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaneSliderControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B338E0D61CEB7F59002C1737 /* JaneSliderControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaneSliderControlUITests.swift; sourceTree = "<group>"; };
 		B338E0D81CEB7F59002C1737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B338E0E91CEB8012002C1737 /* SliderControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SliderControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B338E0EB1CEB8012002C1737 /* SliderControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderControl.h; sourceTree = "<group>"; };
+		B338E0ED1CEB8012002C1737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B338E0F21CEB8012002C1737 /* SliderControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SliderControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B338E0F91CEB8012002C1737 /* SliderControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderControlTests.swift; sourceTree = "<group>"; };
+		B338E0FB1CEB8012002C1737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B338E1071CEB8077002C1737 /* SliderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B338E0C41CEB7F59002C1737 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B338E0FE1CEB8012002C1737 /* SliderControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +102,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B338E0E51CEB8012002C1737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B338E0EF1CEB8012002C1737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B338E0F31CEB8012002C1737 /* SliderControl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,8 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				B338E0B51CEB7F59002C1737 /* JaneSliderControl */,
-				B338E0CA1CEB7F59002C1737 /* JaneSliderControlTests */,
 				B338E0D51CEB7F59002C1737 /* JaneSliderControlUITests */,
+				B338E0EA1CEB8012002C1737 /* SliderControl */,
+				B338E0F81CEB8012002C1737 /* SliderControlTests */,
 				B338E0B41CEB7F59002C1737 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				B338E0B31CEB7F59002C1737 /* JaneSliderControl.app */,
-				B338E0C71CEB7F59002C1737 /* JaneSliderControlTests.xctest */,
 				B338E0D21CEB7F59002C1737 /* JaneSliderControlUITests.xctest */,
+				B338E0E91CEB8012002C1737 /* SliderControl.framework */,
+				B338E0F21CEB8012002C1737 /* SliderControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,15 +155,6 @@
 			path = JaneSliderControl;
 			sourceTree = "<group>";
 		};
-		B338E0CA1CEB7F59002C1737 /* JaneSliderControlTests */ = {
-			isa = PBXGroup;
-			children = (
-				B338E0CB1CEB7F59002C1737 /* JaneSliderControlTests.swift */,
-				B338E0CD1CEB7F59002C1737 /* Info.plist */,
-			);
-			path = JaneSliderControlTests;
-			sourceTree = "<group>";
-		};
 		B338E0D51CEB7F59002C1737 /* JaneSliderControlUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +164,37 @@
 			path = JaneSliderControlUITests;
 			sourceTree = "<group>";
 		};
+		B338E0EA1CEB8012002C1737 /* SliderControl */ = {
+			isa = PBXGroup;
+			children = (
+				B338E0EB1CEB8012002C1737 /* SliderControl.h */,
+				B338E0ED1CEB8012002C1737 /* Info.plist */,
+				B338E1071CEB8077002C1737 /* SliderControl.swift */,
+			);
+			path = SliderControl;
+			sourceTree = "<group>";
+		};
+		B338E0F81CEB8012002C1737 /* SliderControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				B338E0F91CEB8012002C1737 /* SliderControlTests.swift */,
+				B338E0FB1CEB8012002C1737 /* Info.plist */,
+			);
+			path = SliderControlTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B338E0E61CEB8012002C1737 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B338E0EC1CEB8012002C1737 /* SliderControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B338E0B21CEB7F59002C1737 /* JaneSliderControl */ = {
@@ -135,33 +204,17 @@
 				B338E0AF1CEB7F59002C1737 /* Sources */,
 				B338E0B01CEB7F59002C1737 /* Frameworks */,
 				B338E0B11CEB7F59002C1737 /* Resources */,
+				B338E1031CEB8012002C1737 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B338E0FD1CEB8012002C1737 /* PBXTargetDependency */,
 			);
 			name = JaneSliderControl;
 			productName = JaneSliderControl;
 			productReference = B338E0B31CEB7F59002C1737 /* JaneSliderControl.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B338E0C61CEB7F59002C1737 /* JaneSliderControlTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B338E0DE1CEB7F59002C1737 /* Build configuration list for PBXNativeTarget "JaneSliderControlTests" */;
-			buildPhases = (
-				B338E0C31CEB7F59002C1737 /* Sources */,
-				B338E0C41CEB7F59002C1737 /* Frameworks */,
-				B338E0C51CEB7F59002C1737 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B338E0C91CEB7F59002C1737 /* PBXTargetDependency */,
-			);
-			name = JaneSliderControlTests;
-			productName = JaneSliderControlTests;
-			productReference = B338E0C71CEB7F59002C1737 /* JaneSliderControlTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B338E0D11CEB7F59002C1737 /* JaneSliderControlUITests */ = {
 			isa = PBXNativeTarget;
@@ -181,6 +234,43 @@
 			productReference = B338E0D21CEB7F59002C1737 /* JaneSliderControlUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B338E0E81CEB8012002C1737 /* SliderControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B338E1001CEB8012002C1737 /* Build configuration list for PBXNativeTarget "SliderControl" */;
+			buildPhases = (
+				B338E0E41CEB8012002C1737 /* Sources */,
+				B338E0E51CEB8012002C1737 /* Frameworks */,
+				B338E0E61CEB8012002C1737 /* Headers */,
+				B338E0E71CEB8012002C1737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SliderControl;
+			productName = SliderControl;
+			productReference = B338E0E91CEB8012002C1737 /* SliderControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B338E0F11CEB8012002C1737 /* SliderControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B338E1041CEB8012002C1737 /* Build configuration list for PBXNativeTarget "SliderControlTests" */;
+			buildPhases = (
+				B338E0EE1CEB8012002C1737 /* Sources */,
+				B338E0EF1CEB8012002C1737 /* Frameworks */,
+				B338E0F01CEB8012002C1737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B338E0F51CEB8012002C1737 /* PBXTargetDependency */,
+				B338E0F71CEB8012002C1737 /* PBXTargetDependency */,
+			);
+			name = SliderControlTests;
+			productName = SliderControlTests;
+			productReference = B338E0F21CEB8012002C1737 /* SliderControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,11 +284,14 @@
 					B338E0B21CEB7F59002C1737 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					B338E0C61CEB7F59002C1737 = {
+					B338E0D11CEB7F59002C1737 = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = B338E0B21CEB7F59002C1737;
 					};
-					B338E0D11CEB7F59002C1737 = {
+					B338E0E81CEB8012002C1737 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					B338E0F11CEB8012002C1737 = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = B338E0B21CEB7F59002C1737;
 					};
@@ -218,8 +311,9 @@
 			projectRoot = "";
 			targets = (
 				B338E0B21CEB7F59002C1737 /* JaneSliderControl */,
-				B338E0C61CEB7F59002C1737 /* JaneSliderControlTests */,
 				B338E0D11CEB7F59002C1737 /* JaneSliderControlUITests */,
+				B338E0E81CEB8012002C1737 /* SliderControl */,
+				B338E0F11CEB8012002C1737 /* SliderControlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,14 +329,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B338E0C51CEB7F59002C1737 /* Resources */ = {
+		B338E0D01CEB7F59002C1737 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B338E0D01CEB7F59002C1737 /* Resources */ = {
+		B338E0E71CEB8012002C1737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B338E0F01CEB8012002C1737 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,14 +362,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B338E0C31CEB7F59002C1737 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B338E0CC1CEB7F59002C1737 /* JaneSliderControlTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B338E0CE1CEB7F59002C1737 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,18 +370,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B338E0E41CEB8012002C1737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B338E1081CEB8077002C1737 /* SliderControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B338E0EE1CEB8012002C1737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B338E0FA1CEB8012002C1737 /* SliderControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B338E0C91CEB7F59002C1737 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B338E0B21CEB7F59002C1737 /* JaneSliderControl */;
-			targetProxy = B338E0C81CEB7F59002C1737 /* PBXContainerItemProxy */;
-		};
 		B338E0D41CEB7F59002C1737 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B338E0B21CEB7F59002C1737 /* JaneSliderControl */;
 			targetProxy = B338E0D31CEB7F59002C1737 /* PBXContainerItemProxy */;
+		};
+		B338E0F51CEB8012002C1737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B338E0E81CEB8012002C1737 /* SliderControl */;
+			targetProxy = B338E0F41CEB8012002C1737 /* PBXContainerItemProxy */;
+		};
+		B338E0F71CEB8012002C1737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B338E0B21CEB7F59002C1737 /* JaneSliderControl */;
+			targetProxy = B338E0F61CEB8012002C1737 /* PBXContainerItemProxy */;
+		};
+		B338E0FD1CEB8012002C1737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B338E0E81CEB8012002C1737 /* SliderControl */;
+			targetProxy = B338E0FC1CEB8012002C1737 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -401,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = JaneSliderControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jane.JaneSliderControl;
@@ -412,34 +532,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = JaneSliderControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jane.JaneSliderControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B338E0DF1CEB7F59002C1737 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = JaneSliderControlTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jane.JaneSliderControlTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JaneSliderControl.app/JaneSliderControl";
-			};
-			name = Debug;
-		};
-		B338E0E01CEB7F59002C1737 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = JaneSliderControlTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jane.JaneSliderControlTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JaneSliderControl.app/JaneSliderControl";
 			};
 			name = Release;
 		};
@@ -465,6 +562,69 @@
 			};
 			name = Release;
 		};
+		B338E1011CEB8012002C1737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SliderControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jane.SliderControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B338E1021CEB8012002C1737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SliderControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jane.SliderControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B338E1051CEB8012002C1737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SliderControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jane.SliderControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JaneSliderControl.app/JaneSliderControl";
+			};
+			name = Debug;
+		};
+		B338E1061CEB8012002C1737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SliderControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jane.SliderControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JaneSliderControl.app/JaneSliderControl";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -485,19 +645,27 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		B338E0DE1CEB7F59002C1737 /* Build configuration list for PBXNativeTarget "JaneSliderControlTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B338E0DF1CEB7F59002C1737 /* Debug */,
-				B338E0E01CEB7F59002C1737 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		B338E0E11CEB7F59002C1737 /* Build configuration list for PBXNativeTarget "JaneSliderControlUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B338E0E21CEB7F59002C1737 /* Debug */,
 				B338E0E31CEB7F59002C1737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B338E1001CEB8012002C1737 /* Build configuration list for PBXNativeTarget "SliderControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B338E1011CEB8012002C1737 /* Debug */,
+				B338E1021CEB8012002C1737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B338E1041CEB8012002C1737 /* Build configuration list for PBXNativeTarget "SliderControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B338E1051CEB8012002C1737 /* Debug */,
+				B338E1061CEB8012002C1737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

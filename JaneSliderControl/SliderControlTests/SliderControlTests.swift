@@ -1,15 +1,15 @@
 //
-//  JaneSliderControlTests.swift
-//  JaneSliderControlTests
+//  SliderControlTests.swift
+//  SliderControlTests
 //
 //  Created by Barlow Tucker on 5/17/16.
 //  Copyright © 2016 Jane. All rights reserved.
 //
 
 import XCTest
-@testable import JaneSliderControl
+@testable import SliderControl
 
-class JaneSliderControlTests: XCTestCase {
+class SliderControlTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
