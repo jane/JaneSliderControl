@@ -17,6 +17,9 @@ import UIKit
     private var shouldSlide: Bool = false
     private let imageView:UIImageView = UIImageView()
     
+    //MARK: - Public Variables
+    private(set) var progress:Float = 0.0
+    
     //MARK: - IBInspectable Variables
     @IBInspectable public var sliderColor:UIColor = UIColor.lightGrayColor() {
         didSet {
@@ -62,6 +65,12 @@ import UIKit
             self.setNeedsLayout()
         }
     }
+    @IBInspectable public var sliderFont:UIFont = UIFont.systemFontOfSize(14) {
+        didSet {
+            self.sliderLabel.font = self.sliderFont
+            self.setNeedsLayout()
+        }
+    }
     
     //MARK: - UIControl
     public override init(frame: CGRect) {
@@ -91,6 +100,7 @@ import UIKit
         self.sliderLabel.translatesAutoresizingMaskIntoConstraints = false
         self.sliderLabel.textAlignment = .Center
         self.sliderLabel.textColor = self.textColor
+        self.sliderLabel.font = self.sliderFont
         self.addSubview(self.sliderLabel)
         self.addVisualConstraints("V:|[view]|", horizontal: "H:|[view]|", view: self.sliderLabel, toView: self)
         
@@ -126,24 +136,26 @@ import UIKit
         switch (recognizer.state) {
             case .Began:
                 //Only slide if the gestures starts within the slide frame
-                 self.shouldSlide = x > (self.sliderWidthConstraint.constant - CGFloat(self.sliderWidth)) && x < self.sliderWidthConstraint.constant + padding
+                self.shouldSlide = x > (self.sliderWidthConstraint.constant - CGFloat(self.sliderWidth)) && x < self.sliderWidthConstraint.constant + padding
+                self.sendActionsForControlEvents(.EditingDidBegin)
             case .Changed:
                 guard self.shouldSlide && x > CGFloat(self.sliderWidth) else { return }
                 self.sliderWidthConstraint.constant = x
+                self.progress = Float(x/self.bounds.size.width)
+                self.sendActionsForControlEvents(.ValueChanged)
             case .Ended:fallthrough
             case .Cancelled:
                 guard self.shouldSlide else { return }
                 self.shouldSlide = false
                 
-                let sliderControlWidth = self.bounds.size.width
-                let progress = x/sliderControlWidth
+                self.progress = Float(x/self.bounds.size.width)
                 let success: Bool
                 let finalX: CGFloat
                 
                 //If we are more than 65% through the swipe and moving the the right direction
-                if progress > 0.65 && recognizer.velocityInView(self).x > -1.0 {
+                if self.progress > 0.65 && recognizer.velocityInView(self).x > -1.0 {
                     success = true
-                    finalX = sliderControlWidth
+                    finalX = self.bounds.size.width
                 } else {
                     success = false
                     finalX = CGFloat(self.sliderWidth)
@@ -155,7 +167,11 @@ import UIKit
                 UIView.animateWithDuration(0.25, animations: { 
                     self.layoutIfNeeded()
                 }, completion: { (finished) in
-                    
+                    if success {
+                        self.sendActionsForControlEvents(.PrimaryActionTriggered)
+                    } else {
+                        self.sendActionsForControlEvents(.EditingDidEnd)
+                    }
                 })
             default: break
         }
