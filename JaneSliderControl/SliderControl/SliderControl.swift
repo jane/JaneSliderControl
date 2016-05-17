@@ -129,6 +129,13 @@ import UIKit
     }
     
     //MARK: - Public Methods
+    public func reset() {
+        self.progress = 0.0
+        self.sliderWidthConstraint.constant = CGFloat(self.sliderWidth)
+        self.setNeedsUpdateConstraints()
+        self.layoutIfNeeded()
+    }
+    
     func panGesture(recognizer:UIPanGestureRecognizer) {
         let x = recognizer.locationInView(self).x
         let padding: CGFloat = 20.0
@@ -159,6 +166,7 @@ import UIKit
                 } else {
                     success = false
                     finalX = CGFloat(self.sliderWidth)
+                    self.progress = 0.0
                 }
                 
                 self.sliderWidthConstraint.constant = finalX
@@ -168,6 +176,10 @@ import UIKit
                     self.layoutIfNeeded()
                 }, completion: { (finished) in
                     if success {
+                        if #available(iOS 9.0, *) {
+                            self.sendActionsForControlEvents(.PrimaryActionTriggered)
+                        }
+                        
                         self.sendActionsForControlEvents(.EditingDidEnd)
                     } else {
                         self.sendActionsForControlEvents(.TouchCancel)

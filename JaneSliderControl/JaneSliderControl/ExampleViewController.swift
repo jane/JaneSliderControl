@@ -27,7 +27,13 @@ class ExampleViewController: UIViewController {
             default: return "Unknown Slider"
         }
     }
-
+    
+    @IBAction func resetTapped(sender: AnyObject) {
+        self.topSlider.reset()
+        self.leftSlider.reset()
+        self.rightSlider.reset()
+        self.thinSlider.reset()
+    }
     @IBAction func sliderChanged(sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
         self.statusLabel.text = "Changing: Progress - \(sender.progress)"
