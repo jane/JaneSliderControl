@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Example View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ExampleViewController" customModule="JaneSliderControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvJ-oa-bIS" customClass="SliderControl" customModule="SliderControl">
+                                <rect key="frame" x="20" y="20" width="560" height="65"/>
+                                <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="ImX-3F-jGt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvP-Em-EJX" customClass="SliderControl" customModule="SliderControl">
+                                <rect key="frame" x="20" y="105" width="273" height="65"/>
+                                <color key="backgroundColor" red="0.54117647059999996" green="0.85490196080000003" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="tFY-ud-BSc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl3-Wz-5K5" customClass="SliderControl" customModule="SliderControl">
+                                <rect key="frame" x="307" y="105" width="273" height="65"/>
+                                <color key="backgroundColor" red="0.54117647059999996" green="0.85490196080000003" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="yjr-iC-TPU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wre-Ii-lt6" customClass="SliderControl" customModule="SliderControl">
+                                <rect key="frame" x="20" y="178" width="560" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="vu6-MA-RCL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="rvJ-oa-bIS" secondAttribute="leading" id="1S6-0x-mkK"/>
+                            <constraint firstItem="Wl3-Wz-5K5" firstAttribute="leading" secondItem="YvP-Em-EJX" secondAttribute="trailing" constant="14" id="2CN-1U-VG3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Wre-Ii-lt6" secondAttribute="leading" id="5eD-2i-5XX"/>
+                            <constraint firstItem="Wre-Ii-lt6" firstAttribute="top" secondItem="YvP-Em-EJX" secondAttribute="bottom" constant="8" id="95U-Gz-E49"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wre-Ii-lt6" secondAttribute="trailing" id="Fxg-Cs-oc1"/>
+                            <constraint firstItem="rvJ-oa-bIS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Hkr-2A-Kh8"/>
+                            <constraint firstItem="Wl3-Wz-5K5" firstAttribute="top" secondItem="rvJ-oa-bIS" secondAttribute="bottom" constant="20" id="Vza-HN-I8b"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YvP-Em-EJX" secondAttribute="leading" id="fbe-tj-hfF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rvJ-oa-bIS" secondAttribute="trailing" id="hTx-uw-5yy"/>
+                            <constraint firstItem="YvP-Em-EJX" firstAttribute="width" secondItem="Wl3-Wz-5K5" secondAttribute="width" id="kQI-5R-VVJ"/>
+                            <constraint firstItem="YvP-Em-EJX" firstAttribute="top" secondItem="rvJ-oa-bIS" secondAttribute="bottom" constant="20" id="mNA-wf-ydy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wl3-Wz-5K5" secondAttribute="trailing" id="zwE-Vm-b6y"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="leftSlider" destination="YvP-Em-EJX" id="9rS-NR-77t"/>
+                        <outlet property="rightSlider" destination="Wl3-Wz-5K5" id="zi4-y1-Rsv"/>
+                        <outlet property="thinSlider" destination="Wre-Ii-lt6" id="wUw-mb-9eL"/>
+                        <outlet property="topSlider" destination="rvJ-oa-bIS" id="dgK-Fv-AxF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1109" y="785"/>
         </scene>
     </scenes>
 </document>
