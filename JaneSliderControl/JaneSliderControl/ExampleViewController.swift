@@ -18,7 +18,7 @@ class ExampleViewController: UIViewController {
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
-    private func sliderName(slider:SliderControl) -> String {
+    fileprivate func sliderName(_ slider:SliderControl) -> String {
         switch (slider) {
             case self.topSlider: return "Top Slider"
             case self.leftSlider: return "Middle Left Slider"
@@ -28,21 +28,21 @@ class ExampleViewController: UIViewController {
         }
     }
     
-    @IBAction func resetTapped(sender: AnyObject) {
+    @IBAction func resetTapped(_ sender: AnyObject) {
         self.topSlider.reset()
         self.leftSlider.reset()
         self.rightSlider.reset()
         self.thinSlider.reset()
     }
-    @IBAction func sliderChanged(sender: SliderControl) {
+    @IBAction func sliderChanged(_ sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
         self.statusLabel.text = "Changing: Progress - \(sender.progress)"
     }
-    @IBAction func sliderFinished(sender: SliderControl) {
+    @IBAction func sliderFinished(_ sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
         self.statusLabel.text = "Finished"
     }
-    @IBAction func slideCanceled(sender: SliderControl) {
+    @IBAction func slideCanceled(_ sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
         self.statusLabel.text = "Canceled"
     }
