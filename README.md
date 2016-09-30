@@ -4,6 +4,10 @@ The JaneSliderControl is a UIControl subclass that can be customized to fit the 
 
 ![Example Gif](sliderGif.gif)
 
+##Swift Version
+For using swift version `3.0`, tags `0.2.*`  
+For using swift version `2.3`, tags `0.1.*`
+
 ##Setup
 ###Install using Cocoapods (recommended)
 1. Add `JaneSliderControl` to your podfile and run `pod install`
