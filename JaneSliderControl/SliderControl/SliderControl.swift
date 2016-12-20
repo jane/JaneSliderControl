@@ -146,9 +146,9 @@ import UIKit
                 self.shouldSlide = x > (self.sliderWidthConstraint.constant - CGFloat(self.sliderWidth)) && x < self.sliderWidthConstraint.constant + padding
                 self.sendActions(for: .editingDidBegin)
             case .changed:
-                guard self.shouldSlide && x > CGFloat(self.sliderWidth) else { return }
+                guard self.shouldSlide && x > CGFloat(self.sliderWidth) && x <= self.bounds.size.width + padding else { return }
                 self.sliderWidthConstraint.constant = x
-                self.progress = Float(x/self.bounds.size.width)
+                self.progress = Float(min(x/self.bounds.size.width, 1))
                 self.sendActions(for: .valueChanged)
             case .ended:fallthrough
             case .cancelled:
