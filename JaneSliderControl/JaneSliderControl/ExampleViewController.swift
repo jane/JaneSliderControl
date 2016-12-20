@@ -36,7 +36,7 @@ class ExampleViewController: UIViewController {
     }
     @IBAction func sliderChanged(_ sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
-        self.statusLabel.text = "Changing: Progress - \(sender.progress)"
+        self.statusLabel.text = "Changing: Progress: \(sender.progress)"
     }
     @IBAction func sliderFinished(_ sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
