@@ -136,7 +136,7 @@ import UIKit
         self.layoutIfNeeded()
     }
     
-    func panGesture(_ recognizer:UIPanGestureRecognizer) {
+    @objc func panGesture(_ recognizer:UIPanGestureRecognizer) {
         let x = recognizer.location(in: self).x
         let padding: CGFloat = 20.0
         
