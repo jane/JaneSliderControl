@@ -59,7 +59,7 @@ import UIKit
             self.setNeedsLayout()
         }
     }
-    @IBInspectable open var sliderImageContentMode:UIViewContentMode = .scaleAspectFit {
+    @IBInspectable open var sliderImageContentMode:UIView.ContentMode = .scaleAspectFit {
         didSet {
             self.imageView.contentMode = self.sliderImageContentMode
             self.setNeedsLayout()
