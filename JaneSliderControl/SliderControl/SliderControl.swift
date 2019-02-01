@@ -9,18 +9,18 @@
 import UIKit
 
 @IBDesignable open class SliderControl: UIControl {
-    //MARK: - Private Variables
-    fileprivate let slider:UIView = UIView()
-    fileprivate let sliderLabel:UILabel = UILabel()
-    fileprivate var sliderWidthConstraint:NSLayoutConstraint!
-    fileprivate var sliderImageWidthConstraint:NSLayoutConstraint!
-    fileprivate var shouldSlide: Bool = false
-    fileprivate let imageView:UIImageView = UIImageView()
+    // MARK: - Private Variables
+    private var shouldSlide: Bool = false
+    private var sliderWidthConstraint:NSLayoutConstraint!
+    private var sliderImageWidthConstraint:NSLayoutConstraint!
     
-    //MARK: - Public Variables
-    fileprivate(set) var progress:Float = 0.0
+    // MARK: - Public Variables
+    public let slider:UIView = UIView()
+    public let sliderLabel:UILabel = UILabel()
+    public let imageView:UIImageView = UIImageView()
+    public fileprivate(set) var progress:Float = 0.0
     
-    //MARK: - IBInspectable Variables
+    // MARK: - IBInspectable Variables
     @IBInspectable open var sliderColor:UIColor = UIColor.lightGray {
         didSet {
             self.slider.backgroundColor = self.sliderColor
@@ -59,20 +59,20 @@ import UIKit
             self.setNeedsLayout()
         }
     }
-    @IBInspectable open var sliderImageContentMode:UIView.ContentMode = .scaleAspectFit {
+    open var sliderImageContentMode:UIView.ContentMode = .scaleAspectFit {
         didSet {
             self.imageView.contentMode = self.sliderImageContentMode
             self.setNeedsLayout()
         }
     }
-    @IBInspectable open var sliderFont:UIFont = UIFont.systemFont(ofSize: 14) {
+    open var sliderFont:UIFont = UIFont.systemFont(ofSize: 14) {
         didSet {
             self.sliderLabel.font = self.sliderFont
             self.setNeedsLayout()
         }
     }
     
-    //MARK: - UIControl
+    // MARK: - UIControl
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupSlider()
@@ -83,7 +83,7 @@ import UIKit
         self.setupSlider()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     fileprivate func addVisualConstraints(_ vertical:String, horizontal:String, view:UIView, toView:UIView) {
         let veritcalConstraints = NSLayoutConstraint.constraints(withVisualFormat: vertical, options: [], metrics: nil, views: ["view":view])
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: horizontal, options: [], metrics: nil, views: ["view":view])
@@ -128,7 +128,7 @@ import UIKit
         self.addGestureRecognizer(pan)
     }
     
-    //MARK: - Public Methods
+    // MARK: - Public Methods
     open func reset() {
         self.progress = 0.0
         self.sliderWidthConstraint.constant = CGFloat(self.sliderWidth)
@@ -150,8 +150,7 @@ import UIKit
                 self.sliderWidthConstraint.constant = x
                 self.progress = Float(min(x/self.bounds.size.width, 1))
                 self.sendActions(for: .valueChanged)
-            case .ended:fallthrough
-            case .cancelled:
+            case .ended, .cancelled:
                 guard self.shouldSlide else { return }
                 self.shouldSlide = false
                 
