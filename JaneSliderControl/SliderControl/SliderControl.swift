@@ -10,15 +10,15 @@ import UIKit
 
 @IBDesignable open class SliderControl: UIControl {
     //MARK: - Private Variables
-    fileprivate let slider:UIView = UIView()
-    fileprivate let sliderLabel:UILabel = UILabel()
-    fileprivate var sliderWidthConstraint:NSLayoutConstraint!
-    fileprivate var sliderImageWidthConstraint:NSLayoutConstraint!
-    fileprivate var shouldSlide: Bool = false
-    fileprivate let imageView:UIImageView = UIImageView()
+    private var shouldSlide: Bool = false
+    private var sliderWidthConstraint:NSLayoutConstraint!
+    private var sliderImageWidthConstraint:NSLayoutConstraint!
     
     //MARK: - Public Variables
-    fileprivate(set) var progress:Float = 0.0
+    public let slider:UIView = UIView()
+    public let sliderLabel:UILabel = UILabel()
+    public let imageView:UIImageView = UIImageView()
+    public fileprivate(set) var progress:Float = 0.0
     
     //MARK: - IBInspectable Variables
     @IBInspectable open var sliderColor:UIColor = UIColor.lightGray {
