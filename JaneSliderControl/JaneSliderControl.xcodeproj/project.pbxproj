@@ -234,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B338E0DB1CEB7F59002C1737 /* Build configuration list for PBXNativeTarget "JaneSliderControl" */;
 			buildPhases = (
+				F857D08B2204B1A5004C862F /* SwiftLint */,
 				B338E0AF1CEB7F59002C1737 /* Sources */,
 				B338E0B01CEB7F59002C1737 /* Frameworks */,
 				B338E0B11CEB7F59002C1737 /* Resources */,
@@ -311,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Jane;
 				TargetAttributes = {
 					B338E0B21CEB7F59002C1737 = {
@@ -388,6 +389,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F857D08B2204B1A5004C862F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B338E0AF1CEB7F59002C1737 /* Sources */ = {
