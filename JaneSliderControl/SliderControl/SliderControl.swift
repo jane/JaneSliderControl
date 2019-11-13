@@ -9,10 +9,16 @@
 import UIKit
 
 @IBDesignable open class SliderControl: UIControl {
+    
+    private enum HapticFeedbackIndicator {
+        case success, cancel, none
+    }
+    
     // MARK: - Private Variables
     private var shouldSlide: Bool = false
     private var sliderWidthConstraint:NSLayoutConstraint!
     private var sliderImageWidthConstraint:NSLayoutConstraint!
+    private var hapticFeedbackIndicator: HapticFeedbackIndicator = .none
     
     // MARK: - Public Variables
     public let slider:UIView = UIView()
@@ -148,9 +154,24 @@ import UIKit
             case .changed:
                 guard self.shouldSlide && x > CGFloat(self.sliderWidth) && x <= self.bounds.size.width + padding else { return }
                 self.sliderWidthConstraint.constant = x
-                self.progress = Float(min(x/self.bounds.size.width, 1))
+                let progress = Float(min(x/self.bounds.size.width, 1))
+                if #available(iOS 10.0, *) {
+                    if progress > 0.65, progress > self.progress, self.hapticFeedbackIndicator != .success {
+                        self.hapticFeedbackIndicator = .success
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    } else if progress <= 0.65, progress < self.progress, self.hapticFeedbackIndicator != .cancel {
+                        self.hapticFeedbackIndicator = .cancel
+                        if #available(iOS 13.0, *) {
+                            UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+                        } else {
+                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                        }
+                    }
+                }
+                self.progress = progress
                 self.sendActions(for: .valueChanged)
             case .ended, .cancelled:
+                self.hapticFeedbackIndicator = .none
                 guard self.shouldSlide else { return }
                 self.shouldSlide = false
                 
@@ -171,7 +192,7 @@ import UIKit
                 self.sliderWidthConstraint.constant = finalX
                 self.setNeedsUpdateConstraints()
                 
-                UIView.animate(withDuration: 0.25, animations: { 
+                UIView.animate(withDuration: 0.25, animations: {
                     self.layoutIfNeeded()
                 }, completion: { (finished) in
                     if success {
