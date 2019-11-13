@@ -19,6 +19,7 @@ import UIKit
     private var sliderWidthConstraint:NSLayoutConstraint!
     private var sliderImageWidthConstraint:NSLayoutConstraint!
     private var hapticFeedbackIndicator: HapticFeedbackIndicator = .none
+    private let successThreshold: Float = 0.65
     
     // MARK: - Public Variables
     public let slider:UIView = UIView()
@@ -156,10 +157,10 @@ import UIKit
                 self.sliderWidthConstraint.constant = x
                 let progress = Float(min(x/self.bounds.size.width, 1))
                 if #available(iOS 10.0, *) {
-                    if progress > 0.65, progress > self.progress, self.hapticFeedbackIndicator != .success {
+                    if progress > self.successThreshold, progress > self.progress, self.hapticFeedbackIndicator != .success {
                         self.hapticFeedbackIndicator = .success
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    } else if progress <= 0.65, progress < self.progress, self.hapticFeedbackIndicator != .cancel {
+                    } else if progress <= self.successThreshold, progress < self.progress, self.hapticFeedbackIndicator != .cancel {
                         self.hapticFeedbackIndicator = .cancel
                         if #available(iOS 13.0, *) {
                             UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
@@ -180,7 +181,7 @@ import UIKit
                 let finalX: CGFloat
                 
                 //If we are more than 65% through the swipe and moving the the right direction
-                if self.progress > 0.65 && recognizer.velocity(in: self).x > -1.0 {
+                if self.progress > self.successThreshold && recognizer.velocity(in: self).x > -1.0 {
                     success = true
                     finalX = self.bounds.size.width
                 } else {
