@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.author        = { "Jane" => "ios@jane.com" }
   s.platform      = :ios, "11.0"
   s.swift_version = "4.2"
-  s.source        = { :git => "https://github.com/jane/JaneSliderControl.git", :tag => "2.0.4" }
+  s.source        = { :git => "https://github.com/jane/JaneSliderControl.git", :tag => s.version.to_s }
   s.source_files  = "JaneSliderControl/SliderControl/*.swift"
 end
