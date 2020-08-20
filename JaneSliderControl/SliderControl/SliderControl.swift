@@ -143,6 +143,23 @@ import UIKit
         self.layoutIfNeeded()
     }
     
+    open func setProgress(_ progress: Float, animated: Bool) {
+        self.progress = progress
+        
+        let minWidth = CGFloat(self.sliderWidth)
+        let maxWidth = self.bounds.width
+        let newX = min(maxWidth, minWidth + (CGFloat(progress) * (maxWidth - minWidth)))
+        
+        self.sliderWidthConstraint.constant = newX
+        self.setNeedsUpdateConstraints()
+        
+        if animated {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
+    
     @objc func panGesture(_ recognizer:UIPanGestureRecognizer) {
         let x = recognizer.location(in: self).x
         let padding: CGFloat = 20.0

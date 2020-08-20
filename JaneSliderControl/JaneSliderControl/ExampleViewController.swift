@@ -34,6 +34,12 @@ class ExampleViewController: UIViewController {
         self.rightSlider.reset()
         self.thinSlider.reset()
     }
+    @IBAction func toggleTapped(_ sender: Any) {
+        self.topSlider.setProgress(self.topSlider.progress == 0 ? 1 : 0, animated: true)
+        self.leftSlider.setProgress(self.leftSlider.progress == 0 ? 1 : 0, animated: true)
+        self.rightSlider.setProgress(self.rightSlider.progress == 0 ? 1 : 0, animated: true)
+        self.thinSlider.setProgress(self.thinSlider.progress == 0 ? 1 : 0, animated: true)
+    }
     @IBAction func sliderChanged(_ sender: SliderControl) {
         self.sliderLabel.text = self.sliderName(sender)
         self.statusLabel.text = "Changing: Progress: \(sender.progress)"

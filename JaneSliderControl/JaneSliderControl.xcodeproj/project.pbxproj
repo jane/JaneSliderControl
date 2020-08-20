@@ -85,6 +85,7 @@
 		B338E0FB1CEB8012002C1737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B338E1071CEB8077002C1737 /* SliderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
 		B338E10D1CEB83C6002C1737 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		F8246D8A24EF3D3B00E84247 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F8A42B9F24DC99D0005DE55B /* JaneSliderControl.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = JaneSliderControl.podspec; path = ../JaneSliderControl.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +126,7 @@
 		B338E0AA1CEB7F59002C1737 = {
 			isa = PBXGroup;
 			children = (
+				F8246D8A24EF3D3B00E84247 /* README.md */,
 				F8A42B9F24DC99D0005DE55B /* JaneSliderControl.podspec */,
 				B338E0B51CEB7F59002C1737 /* JaneSliderControl */,
 				B338E0D51CEB7F59002C1737 /* JaneSliderControlUITests */,
@@ -319,6 +321,7 @@
 				TargetAttributes = {
 					B338E0B21CEB7F59002C1737 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YU9U6J5U3K;
 						LastSwiftMigration = 1000;
 					};
 					B338E0D11CEB7F59002C1737 = {
@@ -607,7 +610,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YU9U6J5U3K;
 				INFOPLIST_FILE = JaneSliderControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -622,7 +625,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YU9U6J5U3K;
 				INFOPLIST_FILE = JaneSliderControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

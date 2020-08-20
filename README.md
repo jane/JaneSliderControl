@@ -47,6 +47,8 @@ The control has the following properties to customize the look of the slider con
 ### Other Properties
 The slider also has a read only property called `progress` that tells you the progress of the slider as it slides.  The values range from 0 to 1.
 
+You can manually set the progress using `.setProgress(1, animated: true)`. This works to toggle the slider on/off with values 1 and 0.
+
 ## License
 This project is made available with the MIT License.
 
