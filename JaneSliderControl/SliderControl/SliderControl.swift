@@ -16,6 +16,7 @@ import UIKit
     
     // MARK: - Private Variables
     private var shouldSlide: Bool = false
+    private var sliderXOffset: CGFloat = 0
     private var sliderWidthConstraint:NSLayoutConstraint!
     private var sliderImageWidthConstraint:NSLayoutConstraint!
     private var hapticFeedbackIndicator: HapticFeedbackIndicator = .none
@@ -25,6 +26,7 @@ import UIKit
     public let slider:UIView = UIView()
     public let sliderLabel:UILabel = UILabel()
     public let imageView:UIImageView = UIImageView()
+    
     public fileprivate(set) var progress:Float = 0.0
     
     // MARK: - IBInspectable Variables
@@ -161,16 +163,24 @@ import UIKit
     }
     
     @objc func panGesture(_ recognizer:UIPanGestureRecognizer) {
-        let x = recognizer.location(in: self).x
+        let initialX = recognizer.location(in: self).x
         let padding: CGFloat = 20.0
+
+        let x = initialX + self.sliderXOffset
         
         switch (recognizer.state) {
             case .began:
                 //Only slide if the gestures starts within the slide frame
-                self.shouldSlide = x > (self.sliderWidthConstraint.constant - CGFloat(self.sliderWidth)) && x < self.sliderWidthConstraint.constant + padding
+                let sliderX = recognizer.location(in: self.slider).x
+                self.shouldSlide = sliderX > 0 && sliderX < self.slider.bounds.width
+                if self.progress == 0 {
+                    self.sliderXOffset = 0
+                } else {
+                    self.sliderXOffset = self.bounds.width - initialX
+                }
                 self.sendActions(for: .editingDidBegin)
             case .changed:
-                guard self.shouldSlide && x > CGFloat(self.sliderWidth) && x <= self.bounds.size.width + padding else { return }
+                guard self.shouldSlide && x > 0 && x <= self.bounds.width + padding else { return }
                 self.sliderWidthConstraint.constant = x
                 let progress = Float(min(x/self.bounds.size.width, 1))
                 if #available(iOS 10.0, *) {
