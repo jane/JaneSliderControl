@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "JaneSliderControl"
-  s.version       = "2.1.2"
+  s.version       = "2.1.3"
   s.summary       = "The Jane Slider Control is a simple subclass of UIControl similar to slide to unlock"
   s.homepage      = "https://github.com/jane/JaneSliderControl"
   s.license       = 'MIT'

@@ -172,7 +172,7 @@ import UIKit
             case .began:
                 //Only slide if the gestures starts within the slide frame
                 let sliderX = recognizer.location(in: self.slider).x
-                self.shouldSlide = sliderX > 0 && sliderX < self.slider.bounds.width
+                self.shouldSlide = sliderX > 0 && sliderX < self.slider.bounds.width + 30
                 if self.progress == 0 {
                     self.sliderXOffset = 0
                 } else {
